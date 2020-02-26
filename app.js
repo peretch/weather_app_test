@@ -1,4 +1,5 @@
 const { getLocationLatLon } = require('./location/location');
+const { getWeatherByLatLon } = require('./weather/weather');
 
 const argv = require('yargs').options({
     location: {
@@ -8,4 +9,10 @@ const argv = require('yargs').options({
     }
 }).argv;
 
-const locationLatLon = getLocationLatLon(argv.location).then( console.log );
+getLocationLatLon(argv.location)
+    .then(resp => {
+        console.log(resp.name);
+        getWeatherByLatLon(resp.lat, resp.lon)
+        .then(resp => console.log(resp))
+    })
+    .catch(console.log)

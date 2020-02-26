@@ -13,7 +13,7 @@ const getLocationLatLon = async location => {
     });
     
     const resp = await instance.get();
-
+    
     if( resp.data.Results.length === 0 ){
         throw new Error(`No results for location ${location}`);
     }
