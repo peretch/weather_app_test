@@ -1,0 +1,19 @@
+{
+  "name": "05_weather_app",
+  "version": "1.0.0",
+  "description": "This is a test weather app to reinforce knowledge of nodeJS HTTPS, Requests and Axios",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peretch/weather_app_test.git"
+  },
+  "author": "sebastian@peretch.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/peretch/weather_app_test/issues"
+  },
+  "homepage": "https://github.com/peretch/weather_app_test#readme"
+}
