@@ -1,11 +1,11 @@
 const { getLocationLatLon } = require('./location/location');
 
 const argv = require('yargs').options({
-    address: {
-        alias: 'a',
-        desc: 'Address',
+    location: {
+        alias: 'l',
+        desc: 'Location',
         demand:true
     }
 }).argv;
 
-const locationLatLon = getLocationLatLon(argv.address).then( console.log );
+const locationLatLon = getLocationLatLon(argv.location).then( console.log );
