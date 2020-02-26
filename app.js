@@ -9,10 +9,14 @@ const argv = require('yargs').options({
     }
 }).argv;
 
-getLocationLatLon(argv.location)
-    .then(resp => {
-        console.log(resp.name);
-        getWeatherByLatLon(resp.lat, resp.lon)
-        .then(resp => console.log(`${resp.temp}ºC`))
-    })
-    .catch(console.log)
+const getInfo = async location => {
+    try{
+        const { name, lat, lon } = await getLocationLatLon(location);
+        const { temp } = await getWeatherByLatLon(lat, lon);
+        return `The temperature in "${name}" is ${temp}ºC`;
+    }catch (e){
+        throw `Can't find weather for ${location}`;
+    }
+}
+
+getInfo(argv.location).then(console.log).catch(console.log);
