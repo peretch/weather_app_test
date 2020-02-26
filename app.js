@@ -13,6 +13,6 @@ getLocationLatLon(argv.location)
     .then(resp => {
         console.log(resp.name);
         getWeatherByLatLon(resp.lat, resp.lon)
-        .then(resp => console.log(resp))
+        .then(resp => console.log(`${resp.temp}ºC`))
     })
     .catch(console.log)

@@ -6,7 +6,9 @@ const getWeatherByLatLon = async (lat, lon) => {
 
     const data = response.data;
 
-    return { data };
+    return {
+        temp: (data.main.temp - 273).toFixed(2)
+    };
 }
 
 module.exports = {
